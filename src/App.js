@@ -1,17 +1,20 @@
 import './App.css';
 import Counter from './components/Counter';
 import {createStore} from 'redux'
-import {Provider,connect} from 'react-redux'
+import {Provider} from 'react-redux'
 
 const INITIAL_VALUE = {count:0}
 const store = createStore(reducer)
 
 function reducer(state=INITIAL_VALUE,action)
 {
-  return(
-    state
-  )
+  console.log('IN reducer' , action.type)
+    return(
+      state
+    )
 }
+
+// store.dispatch({type: 'chicken'})
 
 function App() {
   return (

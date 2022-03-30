@@ -1,11 +1,24 @@
 import React from "react";
-import connect from 'react-redux'
+import {connect} from 'react-redux'
 
 // count is the mechanism as where state is passed in
-function Counter({count}) {
+function Counter({count,dispatch}) {
+
+    function inc() {
+        dispatch({type: 'INC'})
+        // dispatch an item of type incrememnt
+    }
+
+    function dec() {
+        dispatch({type: 'DEC'})
+        // dispatch an item of type incrememnt
+    }
+
     return(
         <div>
             Count: {count}
+            <button onClick={inc}>+</button>
+            <button onClick={dec}>-</button>
         </div>
     )
 }
