@@ -8,10 +8,16 @@ const store = createStore(reducer)
 
 function reducer(state=INITIAL_VALUE,action)
 {
-  console.log('IN reducer' , action.type)
-    return(
-      state
-    )
+  console.log(`IN reducer ${action.type}`)
+
+  switch(action.type){
+    case('INC'):
+      return({count:state.count+1})
+    case('DEC'):
+      return({count:state.count-1})
+    default:
+      return(state)
+    }
 }
 
 // store.dispatch({type: 'chicken'})
